@@ -1,0 +1,37 @@
+body {
+  .filter-overlay {
+    &.ant-dropdown.ant-dropdown-placement-bottomRight {
+      .ant-dropdown-menu {
+        width: 112px;
+        border-radius: $border-radius-xsmall;
+        padding: 0;
+
+        .ant-radio-group {
+          padding: 5px 16px;
+
+          .ant-radio-wrapper {
+            @include flex-center-ver;
+
+            width: 100%;
+            height: 32px;
+            margin: 0;
+
+            span.ant-radio + * {
+              padding-right: 0;
+            }
+
+            .ant-radio-checked {
+              .ant-radio-inner {
+                background-color: $white;
+
+                &::after {
+                  background-color: $primary;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

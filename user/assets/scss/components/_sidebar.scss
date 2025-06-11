@@ -1,0 +1,29 @@
+// ======================================================
+// Components :: Sidebar
+// ======================================================
+
+.side-bar-sub-popover {
+  &.ant-popover {
+    .ant-popover-arrow {
+      top: 16px;
+    }
+
+    .ant-popover-inner {
+      border-radius: 2px;
+      padding: 0;
+    }
+
+    .ant-popover-title {
+      font-size: $font-size-small;
+      font-weight: $font-weight-medium;
+      line-height: 1.3;
+      color: $gray-20;
+      padding: 8px 16px;
+      border-bottom: 1px solid rgba($color: $black, $alpha: 0.06);
+    }
+
+    .ant-popover-inner-content {
+      padding: 4px 8px 12px;
+    }
+  }
+}

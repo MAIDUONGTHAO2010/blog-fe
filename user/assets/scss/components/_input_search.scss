@@ -1,0 +1,13 @@
+.ant-input-search {
+   .ant-input {
+      border-radius: 2px 0 0 2px;
+
+      &::placeholder {
+         color: $gray-24;
+      }
+   }
+}
+
+.ant-input-search >.ant-input-group >.ant-input-group-addon:last-child .ant-input-search-button {
+   border-radius: 0 2px 2px 0;
+}

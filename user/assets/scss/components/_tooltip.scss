@@ -1,0 +1,70 @@
+// ======================================================
+// Components :: Tooltip
+// ======================================================
+
+.group-head {
+  align-items: center;
+  display: flex;
+}
+
+.notice-tooltip {
+  display: flex;
+  align-items: center;
+  margin-left: 8px;
+  position: relative;
+
+  .anticon {
+    margin-left: 4px;
+    color: $gray-20;
+    font-size: 14px;
+  }
+}
+
+.tag-custom {
+  background-color: $yellow-5;
+  border: 1px solid $yellow-6;
+  border-radius: $border-radius-xsmall;
+  display: flex;
+  align-items: center;
+  min-height: 18px;
+  padding: 0 8px;
+
+  &__name {
+    color: $yellow-7;
+    font-size: $font-size-small;
+    line-height: 15.6px;
+  }
+}
+
+.custom-tooltip {
+  font-size: $font-size-xbase;
+  line-height: 18.2px;
+  max-width: 232px;
+
+  .ant-tooltip-inner {
+    background-color: rgba(0, 0, 0, .75);
+    border-radius: $border-radius-xsmall;
+    box-shadow: none;
+    font-family: $font-family-base;
+    padding: 8px;
+  }
+
+  .ant-tooltip-arrow {
+    &:before {
+      background-color: rgba(0, 0, 0, .75);
+    }
+  }
+
+  &.ant-tooltip-placement-bottomLeft {
+    padding-top: 6px;
+
+    .ant-tooltip-inner {
+      margin-left: -15px;
+    }
+
+    .ant-tooltip-arrow {
+      left: 0;
+    }
+  }
+}
+

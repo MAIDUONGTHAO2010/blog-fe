@@ -1,0 +1,38 @@
+// ======================================================
+// Components :: Checkbox
+// ======================================================
+
+.sake-checkbox {
+  &.ant-checkbox-wrapper {
+    font-family: $font-family-base;
+    line-height: 1.301;
+
+    .ant-checkbox {
+      .ant-checkbox-inner {
+        border-radius: 2px;
+      }
+
+      &-checked {
+        .ant-checkbox-inner {
+          background-color: $primary;
+        }
+      }
+
+      &-disabled {
+        .ant-checkbox-inner {
+          background-color: $gray;
+        }
+      }
+    }
+
+    .text-checkbox {
+      color: $black-1;
+    }
+
+    &-disabled {
+      .text-checkbox {
+        color: $gray-1;
+      }
+    }
+  }
+}

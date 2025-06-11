@@ -1,0 +1,53 @@
+$resize-ratio: 1;
+$w: calc(608px * $resize-ratio);
+$h: calc(533px * $resize-ratio);
+
+@function get-resized-value($num) {
+  @return calc($num * $resize-ratio);
+}
+
+@mixin fsize-16() {
+  font-size: get-resized-value(16px);
+  max-width: get-resized-value(144px);
+}
+
+@mixin fsize-21() {
+  font-size: get-resized-value(21px);
+  max-width: get-resized-value(189px);
+}
+
+@mixin fsize-29() {
+  font-size: get-resized-value(29px);
+  max-width: get-resized-value(261px);
+}
+
+@mixin fsize-35() {
+  font-size: get-resized-value(35px);
+  max-width: get-resized-value(315px);
+}
+
+@mixin fsize-metaphor() {
+  font-size: get-resized-value(16px);
+  max-width: get-resized-value(208px);
+}
+
+@mixin fsize-sense() {
+  font-size: get-resized-value(19px);
+  max-width: get-resized-value(133px);
+}
+
+@mixin get-keyword-color($bgr: #fff, $color: #000000) {
+  background-color: $bgr;
+  color: $color;
+}
+
+@mixin get-keyword-props($top: 0, $left: 0) {
+  top: get-resized-value($top * 1px);
+  transform: translate(calc(get-resized-value($left * 1px) - 50%), -50%);
+}
+
+.flavors {
+  &__keywords {
+    position: relative;
+  }
+}

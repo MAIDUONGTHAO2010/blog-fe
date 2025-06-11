@@ -1,0 +1,50 @@
+// ======================================================
+// Base :: Typography
+// ======================================================
+
+.sake-title {
+  &.ant-typography {
+    font-family: $font-family-base;
+    font-weight: $font-weight-medium;
+    color: $black-1;
+    margin-bottom: 0;
+  }
+
+  &--white {
+    &.ant-typography {
+      color: $white;
+    }
+  }
+
+  &--bold {
+    &.ant-typography {
+      font-weight: $font-weight-bold;
+    }
+  }
+}
+
+.sake-text {
+  &.ant-typography {
+    font-family: $font-family-base;
+    font-size: $font-size-xbase;
+    color: $black-1;
+    line-height: 1.5715;
+    margin-bottom: 0;
+  }
+
+  &.ant-typography-secondary {
+    color: $gray-20;
+  }
+
+  &--link {
+    &.ant-typography {
+      color: $primary;
+      cursor: pointer;
+    }
+  }
+
+  &--small-lh {
+    // small line-height
+    line-height: 1.301;
+  }
+}

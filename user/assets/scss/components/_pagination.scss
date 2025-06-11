@@ -1,0 +1,110 @@
+.sake-pagination {
+  &.ant-table-pagination {
+    @include media-breakpoint-down(lg) {
+      .ant-pagination-item {
+        &:focus-visible,
+        &:active,
+        &:hover {
+          outline: none;
+          background: $white;
+        }
+      }
+    }
+  }
+
+  .ant-pagination-prev,
+  .ant-pagination-next,
+  .ant-pagination-item {
+    @include media-breakpoint-down(lg) {
+      background: $white;
+    }
+  }
+
+  .ant-pagination-prev,
+  .ant-pagination-next,
+  .ant-pagination-item,
+  .ant-pagination-options {
+    min-width: 32px;
+    border-radius: $border-radius-xsmall;
+    font-size: $font-size-xbase;
+    letter-spacing: 0.0025em;
+    margin-bottom: 0.5rem;
+    border: 1px solid $black-3;
+
+    a,
+    .ant-select-selection-item {
+      color: $black-1;
+      background-color: $white;
+      border-color: $black-3;
+    }
+
+    .ant-select-selector {
+      border: 0;
+      border-radius: 0;
+    }
+
+    .ant-pagination-item-link {
+      border-radius: $border-radius-xsmall;
+      background-color: $white;
+    }
+  }
+
+  .ant-pagination-disabled .ant-pagination-item-link {
+    background-color: $black-5;
+  }
+
+  .ant-pagination-item-active {
+    border: 1px solid $primary;
+
+    a {
+      color: $primary;
+
+      @include media-breakpoint-down(lg) {
+        cursor: default;
+      }
+    }
+  }
+
+  .ant-pagination-disabled {
+    background: $black-5;
+  }
+
+  .ant-pagination-jump-next {
+    margin-bottom: 0.5rem;
+
+    .ant-pagination-item-container .ant-pagination-item-ellipsis {
+      color: $gray-20;
+    }
+  }
+
+  .ant-pagination-jump-prev {
+    margin-bottom: 0.5rem;
+
+    .ant-pagination-item-container .ant-pagination-item-ellipsis {
+      color: $gray-20;
+    }
+  }
+
+  .ant-pagination-prev,
+  .ant-pagination-next,
+  .ant-pagination-item,
+  .ant-pagination-options,
+  .ant-pagination-jump-prev,
+  .ant-pagination-jump-next {
+    @include media-breakpoint-down(lg) {
+      @include square(42px);
+
+      a {
+        line-height: 40px;
+      }
+    }
+
+    @media screen and (max-width: 360px) {
+      @include square(36px);
+
+      a {
+        line-height: 34px;
+      }
+    }
+  }
+}

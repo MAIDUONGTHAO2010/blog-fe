@@ -1,0 +1,84 @@
+// ======================================================
+// Components :: Button
+// ======================================================
+// Start classname with prefix `b-`
+
+.wn-btn {
+  &.ant-btn {
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: $border-radius-small - 2;
+    box-shadow: 0 2px 0 0 rgba(0, 0, 0, 0.04);
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    height: auto;
+    line-height: 1.3;
+    color: $black-1;
+    padding: 16px;
+
+    &[disabled] {
+      cursor: default;
+    }
+
+    &-primary {
+      background-color: $primary;
+      border: 0;
+      color: $white;
+
+      &:hover {
+        background-color: $primary;
+      }
+    }
+
+    &--full {
+      width: 100%;
+    }
+  }
+}
+
+.sake-btn {
+  &.ant-btn {
+    font-family: $font-family-base;
+    border-radius: $border-radius-xsmall;
+  }
+
+  &.ant-btn-default {
+    color: $black-1;
+  }
+
+  &.ant-btn-primary {
+    background-color: $primary;
+
+    &:disabled {
+      background-color: rgba(0, 0, 0, 0.04);
+    }
+  }
+
+  &.ant-btn-link {
+    color: $primary;
+
+    &.ant-btn-dangerous {
+      color: $red-3;
+
+      &:disabled {
+        color: rgba(0, 0, 0, 0.25);
+      }
+    }
+
+    &:disabled {
+      color: $gray-1;
+    }
+  }
+}
+
+.ant-btn {
+  @include media-breakpoint-down(lg) {
+    height: 48px;
+  }
+}
+
+.ant-btn-primary,
+.ant-btn-primary:hover,
+.ant-btn-primary:not(:disabled):hover {
+  background-color: $primary;
+}

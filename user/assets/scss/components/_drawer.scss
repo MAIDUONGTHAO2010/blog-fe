@@ -1,0 +1,47 @@
+// ======================================================
+// Components :: Modal
+// ======================================================
+.wn-drawer {
+  .ant-drawer-title {
+    font-weight: $font-weight-medium;
+    color: rgba(0, 0, 0, 0.85);
+  }
+
+  .ant-input,
+  .ant-select-selector,
+  .ant-btn {
+    border-radius: $border-radius-xsmall;
+  }
+
+  .ant-divider {
+    background: $white-2;
+  }
+
+  .ant-btn-primary {
+    background-color: $primary;
+
+    &:disabled {
+      cursor: not-allowed;
+      border-color: $white-2;
+      color: rgba(0, 0, 0, 0.25);
+      background-color: rgba(0, 0, 0, 0.04);
+      box-shadow: none;
+    }
+  }
+}
+
+.wn-sidebar-drawer {
+  &.ant-drawer-content {
+    background: $gray-10;
+    border-right: 1px solid $gray-17;
+  }
+
+  .ant-drawer-body {
+    padding: 0 0 140px;
+    background-color: $gray-10;
+  }
+
+  .ant-drawer-header {
+    display: none;
+  }
+}

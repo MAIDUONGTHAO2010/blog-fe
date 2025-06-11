@@ -1,0 +1,73 @@
+// ======================================================
+// Components :: Radio
+// ======================================================
+
+.ant-radio-group {
+  @include media-breakpoint-down(lg) {
+    height: 48px;
+    @include flex-center-ver;
+    margin-top: 4px;
+  }
+}
+
+.sake-radio {
+  &.ant-radio-wrapper {
+    font-family: $font-family-base;
+    line-height: 1.301;
+
+    @include media-breakpoint-down(lg) {
+      flex: 1;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .ant-radio-inner {
+      &::after {
+        @include square(22px);
+
+        border-radius: 50%;
+        margin-left: -11px;
+        margin-top: -11px;
+      }
+    }
+
+    span {
+      color: $black-12;
+    }
+  }
+
+  &.ant-radio-wrapper-checked {
+    .ant-radio-checked {
+      .ant-radio-inner {
+        border-color: $primary;
+        background-color: $white;
+
+        &::after {
+          background-color: $primary;
+        }
+      }
+    }
+  }
+
+  &.ant-radio-wrapper-disabled {
+    .ant-radio-disabled {
+      .ant-radio-inner {
+        margin: 0;
+        border-color: $black-10;
+        background-color: $white;
+
+        &::after {
+          background-color: $black-10;
+          @include square(16px);
+
+          border-radius: 50%;
+          margin-left: -8px;
+          margin-top: -8px;
+        }
+      }
+    }
+
+    span {
+      color: $black-10;
+    }
+  }
+}

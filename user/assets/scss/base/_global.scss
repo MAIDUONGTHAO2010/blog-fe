@@ -1,0 +1,97 @@
+// ======================================================
+// Base :: Global like html, body, img, a, ul
+// ======================================================
+// prevent double click zoom
+* {
+  touch-action: manipulation;
+}
+
+body {
+  background-color: $white;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  color: $black;
+  font-weight: $font-weight-base;
+  margin: 0;
+  position: relative;
+  word-break: break-word;
+}
+
+* {
+  font-family: $font-family-base;
+}
+
+img {
+  vertical-align: middle;
+}
+
+img,
+iframe,
+video {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    outline: 0;
+    text-decoration: none;
+  }
+}
+
+input,
+input:focus,
+textarea,
+textarea:focus,
+button,
+button:focus {
+  outline: none;
+}
+
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+:not(textarea)::-webkit-scrollbar {
+  background-color: inherit;
+  height: 3px;
+  position: absolute;
+  width: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $gray-11;
+  border-radius: $border-radius-small;
+}
+
+.hide-on-mobile {
+  display: block;
+
+  @include media-breakpoint-down(lg) {
+    display: none;
+  }
+}
+
+.hide-on-desktop {
+  display: block;
+
+  @include media-breakpoint-up(lg) {
+    display: none;
+  }
+}

@@ -1,0 +1,354 @@
+// ======================================================
+// Abstracts :: Mixins
+// ======================================================
+
+// Responsive breakpoint down (PC -> SP)
+// ======================================================
+// Example:
+//
+// .block {
+//   background-color: green;
+//
+//   @include media-breakpoint-down(lg) {
+//     background-color: red;
+//   }
+// }
+$breakpoints: (
+  'xxl': (
+    max-width: 1399.98px,
+  ),
+  'xl': (
+    max-width: 1199.98px,
+  ),
+  'lg': (
+    max-width: 991.98px,
+  ),
+  'md': (
+    max-width: 767.98px,
+  ),
+  'sm': (
+    max-width: 575.98px,
+  ),
+);
+
+@mixin media-breakpoint-down($breakpoint) {
+  $raw-query: map-get($breakpoints, $breakpoint);
+
+  @if $raw-query {
+    $query: if(
+      type-of($raw-query) == 'string',
+      unquote($raw-query),
+      inspect($raw-query)
+    );
+
+    @media #{$query} {
+      @content;
+    }
+  } @else {
+    @error 'No value found for `#{$breakpoint}`. ' + 'Please make sure it is defined in `$breakpoints` map.';
+  }
+}
+
+// Responsive breakpoint up (SP -> PC)
+// ======================================================
+// Example:
+//
+// .block {
+//   background-color: green;
+//
+//   @include media-breakpoint-up(lg) {
+//     background-color: red;
+//   }
+// }
+
+$breakpoints-up: (
+  'xxl': (
+    min-width: 1400px,
+  ),
+  'xl': (
+    min-width: 1200px,
+  ),
+  'lg': (
+    min-width: 992px,
+  ),
+  'md': (
+    min-width: 768px,
+  ),
+  'sm': (
+    min-width: 576px,
+  ),
+);
+
+@mixin media-breakpoint-up($breakpoint) {
+  $raw-query: map-get($breakpoints-up, $breakpoint);
+
+  @if $raw-query {
+    $query: if(
+      type-of($raw-query) == 'string',
+      unquote($raw-query),
+      inspect($raw-query)
+    );
+
+    @media #{$query} {
+      @content;
+    }
+  } @else {
+    @error 'No value found for `#{$breakpoint}`. ' + 'Please make sure it is defined in `$breakpoints` map.';
+  }
+}
+
+// Reset UL OL
+// ======================================================
+// Example:
+// .class {
+//   @include list-unstyled();
+// }
+@mixin list-unstyled() {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+// Flexbox Toolkit
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin flex-center {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+@mixin flex-center-column {
+  @include flex-center;
+
+  flex-direction: column;
+}
+
+@mixin flex-center-ver {
+  align-items: center;
+  display: flex;
+}
+
+@mixin flex-center-hoz {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin flex-inline-center {
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+}
+
+@mixin flex-inline-center-2 {
+  align-items: center;
+  display: inline-flex;
+}
+
+@mixin clear-fix {
+  &::before,
+  &::after {
+    content: '';
+    display: table;
+  }
+
+  &::after {
+    clear: both;
+  }
+}
+
+@mixin text-break {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+@mixin hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+@mixin visible {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+}
+
+@mixin img-fluid($fit: contain) {
+  max-width: 100%;
+  max-height: 100%;
+  object-position: center;
+  object-fit: $fit;
+}
+
+@mixin size-min($minwidth, $minheight) {
+  min-height: $minheight;
+  min-width: $minwidth;
+}
+
+@mixin size-max($maxwidth, $maxheight) {
+  max-height: $maxheight;
+  max-width: $maxwidth;
+}
+
+@mixin flex-display($content) {
+  display: flex;
+  justify-content: $content;
+}
+
+@mixin flexver($content) {
+  display: flex;
+  align-items: $content;
+}
+
+// Triangle with four optional directions with CSS
+@mixin triangle($direction: down, $size: 5px, $color: $black) {
+  @include square(0);
+
+  @if $direction == left {
+    border-bottom: $size solid transparent;
+    border-right: $size solid $color;
+    border-top: $size solid transparent;
+  } @else if $direction == right {
+    border-bottom: $size solid transparent;
+    border-left: $size solid $color;
+    border-top: $size solid transparent;
+  } @else if $direction == down {
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-top: $size solid $color;
+  } @else {
+    border-bottom: $size solid $color;
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+  }
+}
+
+// Position
+// ======================================================
+// Example:
+// .class {
+//   @include position(absolute, 10px, 10px, 10px, 10px);
+// }
+@mixin position(
+  $position,
+  $top: null,
+  $right: null,
+  $bottom: null,
+  $left: null
+) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+// Position Toolkit
+@mixin abs-center-ver {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin abs-center-hoz {
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+}
+
+@mixin abs-center {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// Width !== Height
+// ======================================================
+// Example:
+// .class {
+//   @include size(10px, 20px);
+// }
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+// Width === Height
+// ======================================================
+// Example:
+// .class {
+//   @include square(10px);
+// }
+@mixin square($size) {
+  @include size($size, $size);
+}
+
+// Width === Height + Border Radius
+// ======================================================
+// Example:
+// .class {
+//   @include circle(10px);
+// }
+@mixin circle($size) {
+  @include size($size, $size);
+
+  border-radius: 50%;
+}
+
+// Truncate oneline
+// ======================================================
+// Already supported in Bootstrap 4 mixin: @include text-truncate()
+// Example:
+// .class {
+//   @include truncate-oneline();
+// }
+@mixin truncate-oneline() {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+// Truncate multiline with CSS3
+// ======================================================
+// Example:
+// .class {
+//   @include truncate-multiline-new(3);
+// }
+@mixin truncate-multiline-new($line-number) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* stylelint-disable-next-line value-no-vendor-prefix */
+  display: -webkit-box;
+  /* stylelint-disable property-no-vendor-prefix */
+  -webkit-line-clamp: $line-number;
+
+  /* autoprefixer: off */
+  -webkit-box-orient: vertical;
+}
+
+// Scrollbar
+// ======================================================
+// Example:
+// .class {
+//   @include scrollbar(3px, #fff, red);
+// }
+@mixin scrollbar($width: 8px, $background: $white-6, $bg-color: $gray-19) {
+  ::-webkit-scrollbar {
+    width: $width;
+    background: $background;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: $bg-color;
+  }
+}

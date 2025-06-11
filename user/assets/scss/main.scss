@@ -1,0 +1,46 @@
+// We architecting this project follow as the "7-1 Pattern" (7 folders, 1 file)
+// For more detail about this pattern
+// (https://sass-guidelin.es/#the-7-1-pattern)
+
+// Font fallback for Windows, Linux
+
+// 1. Vendors
+// ----------
+
+// 2. Abstracts
+// ------------
+@import 'abstracts/index';
+
+// 3. Base
+// ------------
+@import 'base/global';
+@import 'base/typography';
+
+// 4. Layouts
+// ------------
+
+// 5. Components
+@import 'components/button';
+@import 'components/input';
+@import 'components/input_search';
+@import 'components/form';
+@import 'components/modal';
+@import 'components/checkbox';
+@import 'components/radio';
+// ------------
+@import 'components/icon';
+@import 'components/tag';
+@import 'components/table';
+@import 'components/pagination';
+@import 'components/select';
+@import 'components/message';
+@import 'components/modal';
+@import 'components/drawer';
+@import 'components/dropdown';
+@import 'components/sidebar';
+@import 'components/tooltip';
+// 6. Extensions
+// ------------
+
+// 7. Page
+// ------------

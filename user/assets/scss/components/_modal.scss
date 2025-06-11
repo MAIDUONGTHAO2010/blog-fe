@@ -1,0 +1,156 @@
+// ======================================================
+// Components :: Modal
+// ======================================================
+
+.wn-modal {
+  &.ant-modal {
+    @include media-breakpoint-down(lg) {
+      max-width: calc(100% - 16px);
+      // Override the default width on SP screen
+      width: 414px !important;
+    }
+  }
+
+  .ant-modal-content {
+    border-radius: $border-radius-xsmall;
+    padding: 0;
+  }
+
+  .ant-modal-header {
+    padding: 16px 24px;
+    margin: 0;
+    border-bottom: 1px solid $gray;
+
+    @include media-breakpoint-down(lg) {
+      padding: 16px 13px;
+    }
+  }
+
+  .ant-modal-title {
+    font-weight: $font-weight-medium;
+    color: $black-1;
+    font-size: $font-size-base;
+    font-family: $font-family-base;
+    line-height: 21px;
+
+    @include media-breakpoint-down(lg) {
+      color: rgba($black, 0.85);
+    }
+  }
+
+  .ant-modal-footer {
+    padding: 10px 24px;
+    margin: 0;
+    border-top: 1px solid $gray;
+
+    @include media-breakpoint-down(lg) {
+      padding: 10px 16px;
+    }
+  }
+
+  &__body {
+    padding: 24px;
+
+    @include media-breakpoint-down(lg) {
+      padding: 24px 13px;
+      max-height: calc(100vh - 160px);
+      overflow-y: auto;
+    }
+
+    .ant-form {
+      @include flex-column;
+      gap: 16px;
+      max-width: 100%;
+
+      @include media-breakpoint-down(lg) {
+        // Override the width that is passed from the parent component
+        width: 100% !important;
+      }
+
+      .ant-form-item {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .ant-input {
+    border-radius: $border-radius-xsmall;
+  }
+
+  .ant-btn {
+    height: 32px;
+    border-radius: $border-radius-xsmall;
+
+    @include media-breakpoint-down(lg) {
+      height: 48px;
+    }
+  }
+
+  .ant-btn-primary {
+    background-color: $primary;
+
+    &:disabled {
+      cursor: not-allowed;
+      border-color: $white-2;
+      color: rgba(0, 0, 0, 0.25);
+      background-color: rgba(0, 0, 0, 0.04);
+      box-shadow: none;
+    }
+  }
+
+  .ant-btn-default {
+    color: $black-1;
+  }
+
+  &--detail.ant-modal {
+    .ant-modal-content {
+      padding: 0 0 32px 0;
+    }
+
+    .ant-modal-header {
+      padding: 16px 24px;
+      border-bottom: 1px solid #0000000f;
+    }
+
+    .ant-modal-title {
+      font-size: $font-size-base;
+      font-weight: 500;
+      line-height: 21px;
+      letter-spacing: 0em;
+      text-align: left;
+      color: #000000d9;
+    }
+
+    .ant-modal-body {
+      padding: 24px 49.5px;
+    }
+  }
+
+  &.kaorium-detail-modal {
+    .ant-modal-title {
+      color: $black;
+    }
+  }
+}
+
+.sake-confirm-modal {
+  &.ant-modal {
+    font-size: $font-size-base;
+
+    .ant-modal-content {
+      padding: 32px 32px 24px;
+      border-radius: 2px;
+    }
+
+    .ant-btn-primary {
+      background-color: $primary;
+    }
+  }
+}
+.ant-message {
+  z-index: $z-index-toast-message;
+
+  @include media-breakpoint-down(lg) {
+    top: 42px;
+  }
+}

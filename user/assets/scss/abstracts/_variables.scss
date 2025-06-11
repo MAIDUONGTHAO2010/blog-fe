@@ -1,0 +1,164 @@
+// ======================================================
+// Abstracts :: Variables
+// ======================================================
+@use 'sass:math';
+
+// Common
+$resized-ratio: math.div(2, 3);
+
+// Color
+$white: #fff;
+$primary: #1890ff;
+$secondary: #626262;
+$black: #000;
+$black-1: #333;
+$black-3: #00000026;
+$black-4: #00000005;
+$black-5: #0000000a;
+$black-6: #0000001f;
+$black-7: #00000014;
+$black-8: #0000000d;
+$black-9: #00000073;
+$black-10: #00000040;
+$black-11: #0000000f;
+$black-12: #000000d9;
+$black-13: #0000001a;
+$black-14: #333333;
+$white-2: #d9d9d9;
+$white-3: #ddd;
+$white-4: #f0f0f0;
+$white-5: #fff1f0;
+$white-6: #f5f5f5;
+$white-7: #eceef8;
+$gray: #ededed;
+$gray-1: #bfbfbf;
+$gray-2: #ccc;
+$gray-3: #a6a6a6;
+$gray-4: #777;
+$gray-5: #2e2e2e;
+$gray-6: #888;
+$gray-7: #fafafa;
+$gray-8: #4f4d48;
+$gray-9: #384454;
+$gray-10: #5c6570;
+$gray-11: #d0d0d0;
+$gray-12: #f0f0f0b3;
+$gray-13: #e3e3e3;
+$gray-14: #f5f5f5;
+$gray-15: #626262;
+$gray-16: #b6b6b6;
+$gray-17: #ececec;
+$gray-18: #c8c8c8;
+$gray-19: #dcdcdc;
+$gray-20: #686868;
+$gray-21: #f0f5ff;
+$gray-22: #aaaaaa;
+$gray-23: #f4f4f4;
+$gray-24: #b8b8b8;
+$blue: #d8f5f5;
+$blue-2: #9de6eb;
+$blue-3: #08b5b9;
+$blue-4: #00528c;
+$blue-6: #40a9ff;
+$blue-7: #e6f7ff;
+$blue-8: #adc6ff;
+$blue-9: #1677ff;
+$blue-10: #e6f4ff;
+$orange: #ffedb2;
+$orange-2: #fada88;
+$orange-3: #e1931e;
+$orange-4: #9f3d1f;
+$pink: #ffe8f5;
+$pink-2: #ffc3e5;
+$pink-3: #ff73ab;
+$pink-4: #ff1a75;
+$pink-5: #ffa39e;
+$pink-6: #eb2f96;
+$pink-7: #fff0f6;
+$pink-8: #ffadd2;
+$red: #f79494;
+$red-2: #b20000;
+$red-3: #ff4d4f;
+$red-4: #ff7875;
+$green: #e4edad;
+$green-2: #d4e56c;
+$green-3: #b6cb36;
+$green-4: #7eb81b;
+$green-5: #f6ffed;
+$green-6: #52c41a;
+$green-7: #b7eb8f;
+$yellow: #fff2bd;
+$yellow-2: #faad14;
+$yellow-3: #ffe58f;
+$yellow-4: #fffbe6;
+$yellow-5: #fff2eb;
+$yellow-6: #ffbb96;
+$yellow-7: #fa541c;
+
+// Font-family
+$font-family-base: 'Noto Sans JP', sans-serif;
+
+// Font-size
+$font-size-xxsmall: 0.5rem; // 8px
+$font-size-xsmall: 0.625rem; // 10px
+$font-size-small: 0.75rem; // 12px
+$font-size-xbase: 0.875rem; // 14px
+$font-size-base: 1rem; // 16px
+$font-size-medium: 1.125rem; // 18px
+$font-size-big: 1.25rem; // 20px
+$font-size-xbig: 1.3125rem; // 21px
+$font-size-large: 1.375rem; // 22px
+$font-size-xlarge: 1.5rem; // 24px
+$font-size-xxlarge: 1.625rem; // 26px
+$font-size-xxxlarge: 2rem; // 32px
+$font-size-xxxxlarge: 3.5rem; // 56px
+$font-size-heading: 2.625rem; // 42px
+
+// Font-weight
+$font-weight-light: 300;
+$font-weight-base: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// Borders
+$border-radius-xsmall: 2px;
+$border-radius-small: 4px;
+$border-radius-base: 6px;
+$border-radius-medium: 12px;
+$border-radius-large: 20px;
+$border-radius-xlarge: 54px;
+
+// Box-shadow
+$box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.25);
+$box-shadow-2: 0 8px 16px 0 rgba(0, 0, 0, 0.25);
+
+// Spacing
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+) !default;
+
+// Z-index
+$z-index-layout: 1;
+$z-index-content: 9;
+$z-index-default: 10;
+$z-index-header: 1060;
+$z-index-modal: 11;
+$z-index-loading: 1100;
+$z-index-loading-fullscreen: 2000;
+$z-index-modal-recommend: 1999;
+$z-index-toast-message: 2001;
+
+// z-index-sp
+$z-index-header-sp: 100;
+
+// Z-index - Flavor map - Keywords > Cool > Rich > warm
+$z-index-key-words: 4;
+$z-index-cool-circle: 3;
+$z-index-rich-circle: 2;
+$z-index-warm-circle: 1;
