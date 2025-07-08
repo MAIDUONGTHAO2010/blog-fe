@@ -33,7 +33,10 @@
           <img :src="post.featured_image" :alt="post.title" />
         </div> -->
         <div class="post-image">
-          <img :src="`/images/docker.jpg`" :alt="post.title" />
+          <img
+            :src="post.image_url || '/images/default.jpeg'"
+            :alt="post.title"
+          />
         </div>
         <div v-if="post.description" class="post-description">
           <p>{{ post.description }}</p>

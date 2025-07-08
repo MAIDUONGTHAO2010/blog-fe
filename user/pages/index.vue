@@ -70,16 +70,19 @@
             @click="viewPost(post)"
           >
             <div class="post-image">
-              <img :src="`/images/default.jpeg`" :alt="post.title" />
+              <img
+                :src="post.image_url || '/images/default.jpeg'"
+                :alt="post.title"
+              />
               <div class="post-category">{{ post.category.name }}</div>
             </div>
             <div class="post-content">
               <h3 class="post-title">
-                {{ truncateText(post.title, 50) }}
+                {{ truncateText(post.title, 70) }}
               </h3>
-              <p class="post-excerpt">
+              <!-- <p class="post-excerpt">
                 {{ truncateText(post.description, 70) }}
-              </p>
+              </p> -->
               <div class="post-meta">
                 <span class="post-date">
                   <i class="fas fa-calendar"></i>
